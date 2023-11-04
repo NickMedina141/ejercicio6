@@ -40,7 +40,7 @@ public class Instrumento {
 
     @Override
     public String toString() {
-        return "Informacion de instrumento:" + "\nId: " + Id + "\nprecio: " + precio + "\ntipo: " + tipo;
+        return "\nInformacion de instrumento:" + "\nId: " + Id + "\nprecio: " + precio + "\ntipo: " + tipo;
     }
     
     

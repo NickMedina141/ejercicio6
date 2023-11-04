@@ -1,24 +1,26 @@
 
 package Ejercicio6;
 
+import static ejercicioPOO.principal.entrada;
 import java.util.ArrayList;
 
 
 public class Sucursal {
-    private String nombre;
+    public static Tipos tipo;
+    private String nombreSucursal;
     private ArrayList<Instrumento> instrumentos;
 
     public Sucursal(String nombreSucursal) {
-        this.nombre = nombreSucursal;
+        this.nombreSucursal = nombreSucursal;
         this.instrumentos  = new ArrayList<Instrumento>();
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombreSucursal() {
+        return nombreSucursal;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombreSucursal(String nombre) {
+        this.nombreSucursal = nombre;
     }
 
     public ArrayList<Instrumento> getInstrumentos() {
@@ -35,7 +37,6 @@ public class Sucursal {
            
         }
     }
-    
     public void agregarelementos(Instrumento instrumento1){
         this.instrumentos.add(instrumento1);
     }
@@ -62,7 +63,7 @@ public class Sucursal {
         int i=0;
         
         Instrumento encontrado = null;
-        while(i < instrumentos.size() && !this.instrumentos.get(i).equals(Id)){
+        while(i < instrumentos.size() && !this.instrumentos.get(i).getId().equals(Id)){
             i++;
         }
         if(i < instrumentos.size()){
@@ -80,7 +81,6 @@ public class Sucursal {
         double[] porcentajes = new double[valor];
         for(Instrumento ins: instrumentos){
             porcentajes[ins.getTipo().ordinal()]++;
-           
         }
         conversion(porcentajes);
         return porcentajes;
@@ -95,7 +95,7 @@ public class Sucursal {
     
     @Override
     public String toString() {
-        return "Informacion de Sucursal: " + "\nnombre:" + nombre + "\nInstrumentos: " + instrumentos;
+        return "Informacion de Sucursal: " + "\nnombre:" + nombreSucursal + "\nInstrumentos: " + instrumentos;
     }
 
     

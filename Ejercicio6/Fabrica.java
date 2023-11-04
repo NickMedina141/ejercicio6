@@ -14,12 +14,12 @@ public class Fabrica {
     }
     
     public void agregarelementos(Sucursal sucursal){
-        this.sucursales.add(sucursal);
+        sucursales.add(sucursal);
     }
     
     public void listarSucursal(){
         for(Sucursal sucursales1: sucursales){
-            System.out.println(sucursales1.getNombre());
+            System.out.println(sucursales1.getNombreSucursal());
             sucursales1.listarIntrumentos();
         }
     }
@@ -37,7 +37,7 @@ public class Fabrica {
     private Sucursal buscarSucursal(String nombreSucursal){
         int i=0;
         Sucursal encontrado = null;
-        while(i < sucursales.size() && !this.sucursales.get(i).equals(nombreSucursal)){
+        while(i < sucursales.size() && !this.sucursales.get(i).getNombreSucursal().equals(nombreSucursal)){
             i++; // si no existe returno una sucursal null
         }
         if(i < sucursales.size()){
@@ -62,7 +62,6 @@ public class Fabrica {
             borrar = sucursales.get(i).eliminarInstrumento(Id);
             i++;
         }
-        
         return borrar;
       } 
     
